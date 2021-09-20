@@ -1,0 +1,3 @@
+import HangmanGame
+
+HangmanGame.run()

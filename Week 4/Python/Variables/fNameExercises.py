@@ -1,0 +1,10 @@
+print("Please enter your name")
+name = input()
+print("Please enter your age, and then date of birth")
+age = input()
+DoB = input()
+print("Now enter the first line of your address and your postcode")
+firstline = input()
+postcode = input()
+
+print(f"You have entered that your name is {name}, you are {age} years old, born on {DoB},\nand live at {firstline}, {postcode}")
