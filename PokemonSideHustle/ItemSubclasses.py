@@ -24,3 +24,5 @@ class BattleItems(MC.Items):
         self.__value = Value
         self.__affected_stat = AffectedStat
         self.__effect = Effect
+
+potion = Potions("Potion", 250, 20)
