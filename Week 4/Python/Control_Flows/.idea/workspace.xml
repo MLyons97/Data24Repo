@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="502c6f40-f9da-4601-9fd7-83605c0a2550" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../PokemonSideHustle/ItemSubclasses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../AdventOfCode/Day4.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../AdventOfCode/Day4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../PokemonSideHustle/Actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../PokemonSideHustle/Actions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../PokemonSideHustle/BattleState.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../PokemonSideHustle/BattleState.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../PokemonSideHustle/Calculations.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../PokemonSideHustle/Calculations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../PokemonSideHustle/Implementing_File.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../PokemonSideHustle/Implementing_File.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../PokemonSideHustle/Main_Class.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../PokemonSideHustle/Main_Class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../PokemonSideHustle/Move_Glossary.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../PokemonSideHustle/Move_Glossary.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../PokemonSideHustle/Pokedex.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../PokemonSideHustle/Pokedex.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../PokemonSideHustle/Weakness_Chart.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../PokemonSideHustle/Weakness_Chart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../PokemonSideHustle/test_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../PokemonSideHustle/test_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Week 5/JSON/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Week 5/JSON/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1yiPU6kFRFftF0lzfKUjRfcDYHS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OOP" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="502c6f40-f9da-4601-9fd7-83605c0a2550" name="Changes" comment="" />
+      <created>1632731448188</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1632731448188</updated>
+    </task>
+    <servers />
+  </component>
+</project>
