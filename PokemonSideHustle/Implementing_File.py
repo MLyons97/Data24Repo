@@ -1,15 +1,23 @@
-import Actions as acts
-import Pokedex as dex
-import Move_Glossary as mgloss
-
-pika = dex.Pikachu()
-char = dex.Charizard()
-char2 = dex.Charizard()
-karp = dex.Magikarp()
-
-print(f"Charizard HP: {char.get_hp()}\n")
-print(f"Second Charizard HP: {char2.get_hp()}")
+import BattleState as BS
+import Pokedex as P
+import Move_Glossary as MG
 
 
-acts.attack(char2, char, mgloss.tbolt)
-acts.attack(char, char2, mgloss.drag_claw)
+karp = P.Magikarp()
+
+char = P.Charmander("Gary")
+char.learn_new_move(MG.drag_claw)
+char.learn_new_move(MG.fthrower)
+char.learn_new_move(MG.equake)
+char.learn_new_move(MG.b_slam)
+
+char.set_nickname("Larry")
+
+pika = P.Pikachu("Ash's Pikachu")
+pika.learn_new_move(MG.tbolt)
+pika.learn_new_move(MG.b_slam)
+pika.learn_new_move(MG.tackle)
+pika.learn_new_move(MG.surf)
+
+BS.BattleRound(char, pika)
+
