@@ -20,7 +20,9 @@ class Moves:
 
 class Pokemon(object):
     def __init__(self, Name, HP, Attack, Defence, Speed, Next_Evolution,
-                 Base_Exp_Given, Type1, Type2=0, Nickname = None,
+                 Base_Exp_Given, Type1,
+                 Base_HP=0, Base_Atk=0, Base_Def=0, Base_SpAtk=0, Base_SpDef=0, Base_Spd=0,
+                 Evol_Level = 0, Type2=0, Nickname = None,
                  Total_EXP = 0, Current_EXP = 0):
         self.__name = Name
         if Nickname is not None:
@@ -29,18 +31,25 @@ class Pokemon(object):
             self.__nickname = Name
         self.__max_hp = HP
         self.__current_hp = HP
+        self.__base_hp = Base_HP
         self.__attack = Attack
+        self.__base_atk = Base_Atk
+        self.__base_spatk = Base_SpAtk
         self.__defence = Defence
+        self.__base_def = Base_Def
+        self.__base_spdef = Base_SpDef
         self.__speed = Speed
+        self.__base_speed = Base_Spd
         self.__base_exp = Base_Exp_Given
         self.__type1 = Type1
         self.__type2 = Type2
         self.__feint = False
         self.__moves = []
         self.__next_evolution = Next_Evolution
+        self.__evol_level = Evol_Level
         self.__level = 5
-        self.__current_exp = 0
-        self.__total_exp = 0
+        self.__current_exp = Current_EXP
+        self.__total_exp = Total_EXP
 
     def get_name(self):
         if len(self.__nickname) > 0:
@@ -53,6 +62,9 @@ class Pokemon(object):
 
     def get_hp(self):
         return self.__current_hp
+
+    def get_base_hp(self):
+        return self.__base_hp
 
     def set_hp(self, value):
         self.__current_hp = value
@@ -69,17 +81,32 @@ class Pokemon(object):
     def get_attack(self):
         return self.__attack
 
+    def get_base_attack(self):
+        return self.__base_atk
+
+    def get_base_sp_attack(self):
+        return self.__base_spatk
+
     def set_attack(self, New_Attack):
         self.__attack = New_Attack
 
     def get_defence(self):
         return self.__defence
 
+    def get_base_defence(self):
+        return self.__base_def
+
+    def get_base_sp_def(self):
+        return self.__base_spdef
+
     def set_defence(self, New_Defence):
         self.__defence = New_Defence
 
     def get_speed(self):
         return self.__speed
+
+    def get_base_speed(self):
+        return self.__base_speed
 
     def set_speed(self, New_Speed):
         self.__speed = New_Speed
@@ -161,6 +188,7 @@ class Items(object):
     def get_type(self):
         return self.__type
 
+
 class Player(object):
     def __init__(self, Name: str, Party: list, Box: list, Inventory = dict):
         self.__name = Name
@@ -208,5 +236,5 @@ class Player(object):
         return self.__bag
 
     def add_to_bag(self, item: Items):
-        self.get_bag()[item.get_type()].append(item)
+        (self.get_bag()[item.get_type()]).append(item)
 

@@ -19,7 +19,8 @@ def __DamageCalc(Move: MC.Moves, Attacker: MC.Pokemon, Defender: MC.Pokemon):
         print("It's not very effective...")
     elif type_effectiveness == 0:
         print(f"It doesn't effect {Defender.get_name()}!")
-    level = 100
+
+    level = Attacker.get_level()
     roll = r.uniform(0.85, 1.00)
     if Move.get_type() in Attacker.get_type():
         STAB = 1.5
