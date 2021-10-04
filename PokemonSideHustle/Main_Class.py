@@ -1,9 +1,10 @@
 class Moves:
-    def __init__(self, Name, BasePower, Accuracy, Type):
+    def __init__(self, Name, BasePower, Accuracy, Type, Category):
         self.__name = Name
         self.__base_power = BasePower
         self.__accuracy = Accuracy
         self.__type = Type
+        self.__category = Category
 
     def get_name(self):
         return self.__name
@@ -17,9 +18,11 @@ class Moves:
     def get_type(self):
         return self.__type
 
+    def get_category(self):
+        return self.__category
 
 class Pokemon(object):
-    def __init__(self, Name, HP, Attack, Defence, Speed, Next_Evolution,
+    def __init__(self, Name, Next_Evolution,
                  Base_Exp_Given, Type1,
                  Base_HP=0, Base_Atk=0, Base_Def=0, Base_SpAtk=0, Base_SpDef=0, Base_Spd=0,
                  Evol_Level = 0, Type2=0, Nickname = None,
@@ -29,16 +32,23 @@ class Pokemon(object):
             self.__nickname = Nickname
         else:
             self.__nickname = Name
-        self.__max_hp = HP
-        self.__current_hp = HP
+        self.__max_hp = Base_HP
+        self.__current_hp = Base_HP
         self.__base_hp = Base_HP
-        self.__attack = Attack
+        self.__attack = Base_Atk
+        self.__atk_stage = 0
         self.__base_atk = Base_Atk
+        self.__sp_atk = Base_SpAtk
+        self.__sp_atk_stage = 0
         self.__base_spatk = Base_SpAtk
-        self.__defence = Defence
+        self.__defence = Base_Def
+        self.__def_stage = 0
         self.__base_def = Base_Def
+        self.__sp_def = Base_SpDef
+        self.__sp_def_stage = 0
         self.__base_spdef = Base_SpDef
-        self.__speed = Speed
+        self.__speed = Base_Spd
+        self.__speed_stage = 0
         self.__base_speed = Base_Spd
         self.__base_exp = Base_Exp_Given
         self.__type1 = Type1
@@ -66,6 +76,14 @@ class Pokemon(object):
     def get_base_hp(self):
         return self.__base_hp
 
+    def set_max_hp(self, value):
+        hp_increase = value - self.__max_hp
+        self.__max_hp = value
+        if self.__current_hp > value:
+            self.__current_hp = value
+        else:
+            self.__current_hp += hp_increase
+
     def set_hp(self, value):
         self.__current_hp = value
 
@@ -81,26 +99,38 @@ class Pokemon(object):
     def get_attack(self):
         return self.__attack
 
+    def set_attack(self, New_Attack):
+        self.__attack = New_Attack
+
     def get_base_attack(self):
         return self.__base_atk
+
+    def get_sp_attack(self):
+        return self.__sp_atk
+
+    def set_sp_attack(self, New_Sp_Attack):
+        self.__sp_atk = New_Sp_Attack
 
     def get_base_sp_attack(self):
         return self.__base_spatk
 
-    def set_attack(self, New_Attack):
-        self.__attack = New_Attack
-
     def get_defence(self):
         return self.__defence
+
+    def set_defence(self, New_Defence):
+        self.__defence = New_Defence
 
     def get_base_defence(self):
         return self.__base_def
 
-    def get_base_sp_def(self):
-        return self.__base_spdef
+    def get_sp_defence(self):
+        return self.__sp_def
 
-    def set_defence(self, New_Defence):
-        self.__defence = New_Defence
+    def set_sp_defence(self, New_Sp_Defence):
+        self.__sp_def = New_Sp_Defence
+
+    def get_base_sp_defence(self):
+        return self.__base_spdef
 
     def get_speed(self):
         return self.__speed
@@ -163,14 +193,25 @@ class Pokemon(object):
         self.gain_exp_t(gain_amount)
         self.gain_exp_c(gain_amount)
 
-    def set_exp_c(self, new_value):
+    def set_current_exp(self, new_value):
         self.__current_exp = new_value
+
+    def set_total_exp(self, new_value):
+        self.__total_exp = new_value
 
     def get_base_exp_given(self):
         return self.__base_exp
 
     def set_nickname(self, new_nickname):
         self.__nickname = new_nickname
+
+    def print_stats(self):
+        print(f"HP:                 {self.__max_hp}\n"
+              f"Attack:             {self.__attack}\n"
+              f"Defence:            {self.__defence}\n"
+              f"Special Attack:     {self.__sp_atk}\n"
+              f"Special Defence:    {self.__sp_def}\n"
+              f"Speed:              {self.__speed}\n")
 
 
 class Items(object):

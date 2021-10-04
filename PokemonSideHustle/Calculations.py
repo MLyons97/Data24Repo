@@ -1,12 +1,26 @@
 import random as r
 import Main_Class as MC
 import Weakness_Chart as WC
-
+import StatCalcs as SC
+import math
 
 def __DamageCalc(Move: MC.Moves, Attacker: MC.Pokemon, Defender: MC.Pokemon):
+    move_cat = Move.get_category()
     move_power = Move.get_power()
-    attack_power = Attacker.get_attack()
-    defence_power = Defender.get_defence()
+    if move_cat == "phys":
+        attack_power = Attacker.get_attack()
+        defence_power = Defender.get_defence()
+    elif move_cat == "spec":
+        attack_power = Attacker.get_sp_attack()
+        defence_power = Defender.get_sp_defence()
+    elif move_cat == "boost":
+        stat_to_boost = Move.get_type()
+        multiplier = Move.get_power()
+        print("This will be coded at some point")
+    else:
+        attack_power = 1
+        defence_power = 1
+        print(f"MOVE TYPE ERROR: {Move.get_name()} HAS CAT {Move.get_category()}")
     move_type = Move.get_type()
     defender_types = Defender.get_type()
     type_effectiveness = 1
@@ -38,6 +52,28 @@ def faint_check(pokemon: MC.Pokemon):
         return True
     else:
         return False
+
+
+def set_up_mon_from_lv(Pokemon: MC.Pokemon, Level: int):
+    Pokemon.set_level(Level)
+    Pokemon.set_total_exp(Level**3)
+    Pokemon.set_max_hp(SC.HP_Calc(Pokemon))
+    Pokemon.set_attack(SC.atk_calc(Pokemon))
+    Pokemon.set_defence(SC.def_calc(Pokemon))
+    Pokemon.set_sp_attack(SC.sp_atk_calc(Pokemon))
+    Pokemon.set_sp_defence(SC.sp_def_calc(Pokemon))
+    Pokemon.set_speed(SC.speed_calc(Pokemon))
+
+
+def set_up_mon_from_exp(Pokemon: MC.Pokemon, Experience: int):
+    Pokemon.set_total_exp(Experience)
+    Pokemon.set_level(math.floor(Experience**(1./3)))
+    Pokemon.set_hp(SC.HP_Calc(Pokemon))
+    Pokemon.set_attack(SC.atk_calc(Pokemon))
+    Pokemon.set_defence(SC.def_calc(Pokemon))
+    Pokemon.set_sp_attack(SC.sp_atk_calc(Pokemon))
+    Pokemon.set_sp_defence(SC.sp_def_calc(Pokemon))
+    Pokemon.set_speed(SC.speed_calc(Pokemon))
 
 def exp_gain(winner: MC.Pokemon, loser: MC.Pokemon):
     winner_level = winner.get_level()
